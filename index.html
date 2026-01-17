@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset and Font Setup */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth; /* Optional: smooth scrolling */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* Parallax Section Styling */
+        .parallax {
+            /* The image used */
+            /* background-image is set per specific ID below */
+
+            /* Set a specific height */
+            min-height: 70vh; /* Adjust height as needed */
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* For caption positioning */
+            position: relative;
+        }
+
+        /* Specific background images for each parallax section */
+        #parallax1 {
+            background-image: url("https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"); /* Forest Path */
+        }
+
+        #parallax2 {
+            background-image: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80"); /* Cityscape */
+        }
+
+        #parallax3 {
+            background-image: url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"); /* Abstract Texture */
+        }
+
+         #parallax4 {
+            background-image: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"); /* Galaxy/Stars */
+        }
+
+
+        /* Content Section Styling */
+        .content {
+            padding: 60px 30px;
+            background-color: #f9f9f9; /* Light background for content */
+            text-align: justify;
+            max-width: 800px; /* Limit content width for readability */
+            margin: 0 auto; /* Center content block */
+        }
+
+        .content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .content p {
+           margin-bottom: 1em;
+           font-weight: 300;
+        }
+
+        /* Optional Caption Styling */
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000; /* Fallback color */
+        }
+
+        .caption span.border {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            color: #333; /* Dark text on light background */
+            padding: 15px 25px;
+            font-size: 25px;
+            letter-spacing: 5px;
+            font-weight: 400;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="parallax" id="parallax1">
+        <div class="caption">
+            <span class="border">SECTION ONE IMAGE</span>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>First Content Unit</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget quam id arcu eleifend pharetra. Sed id lacinia sapien. Integer nec dolor ac tellus ullamcorper pretium. Curabitur vitae libero eleifend, sollicitudin sem id, malesuada est.</p>
+        <p>Phasellus sed efficitur mi. Sed consectetur arcu non tortor auctor, vitae euismod libero sollicitudin. Nulla facilisi. Proin dignissim, nulla non dignissim malesuada, enim elit sollicitudin turpis, eget maximus neque mauris vel quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec condimentum, dolor ut consequat placerat, odio libero fringilla libero, et varius arcu eros eget lectus.</p>
+    </section>
+
+    <section class="parallax" id="parallax2">
+         <div class="caption">
+            <span class="border">SECTION TWO IMAGE</span>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>Second Content Unit</h2>
+        <p>Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+        <p>Integer vitae justo eget magna fermentum iaculis. Curabitur massa. Donec lacinia Masi. Nulla quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
+    </section>
+
+    <section class="parallax" id="parallax3">
+         <div class="caption">
+            <span class="border">SECTION THREE IMAGE</span>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>Third Content Unit</h2>
+        <p>Suspendisse potenti. Mauris et felis ut urna consectetur efficitur. Duis tristique, lorem vitae aliquet tristique, libero leo condimentum magna, sit amet iaculis justo odio id purus. Vestibulum condimentum ante quis lectus gravida, vel tincidunt nisl pulvinar. Donec facilisis volutpat ligula, ac interdum nunc posuere ac.</p>
+        <p>Etiam vel neque vel nunc scelerisque rhoncus. Nullam eget ligula eu libero cursus efficitur. Sed vel enim nec turpis dictum commodo. Praesent eu mi et urna consequat consequat. Duis laoreet, est nec placerat condimentum, quam nisl fringilla lorem, et commodo sapien dolor eget urna. Aliquam erat volutpat.</p>
+    </section>
+
+     <section class="parallax" id="parallax4">
+         <div class="caption">
+            <span class="border">SECTION FOUR IMAGE</span>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>Fourth Content Unit</h2>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Donec et odio pellentesque, vestibulum mi ut, condimentum velit. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce nec justo et arcu commodo pellentesque. Sed non risus id libero malesuada eleifend. Vivamus quis enim vitae est vehicula tincidunt.</p>
+    </section>
+
+</body>
+</html>
